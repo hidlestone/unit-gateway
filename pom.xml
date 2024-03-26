@@ -21,6 +21,11 @@
     </scm>
 
     <dependencies>
+        <!-- api-dependency -->
+        <dependency>
+            <groupId>com.wordplay.unit</groupId>
+            <artifactId>unit-starter-api-dependency</artifactId>
+        </dependency>
         <!--gateway-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -50,8 +55,8 @@
         </dependency>
         <!--gateWay作为网关，也要注册进nacos服务中心-->
         <dependency>
-            <groupId>com.fallframework.platform</groupId>
-            <artifactId>fall-platform-starter-control-dependency</artifactId>
+            <groupId>com.wordplay.unit</groupId>
+            <artifactId>unit-starter-control-dependency</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

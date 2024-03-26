@@ -4,7 +4,7 @@
 	<!-- 应用名称 -->
 	<springProperty name="application.name" source="spring.application.name"/>
 	<!-- 日志保存路径 -->
-	<springProperty name="filePath" source="fall.logback.path"/>
+	<springProperty name="filePath" source="unit.logback.path"/>
 	<!-- 日志保存路径 : /deploy/log/${application.name}/${application.name}.%d{yyyy-MM-dd}-%i.log -->
 	<property name="LOG_HOME" value="${filePath:-/deploy/log}/${application.name}"/>
 
