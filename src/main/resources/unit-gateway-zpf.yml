@@ -23,7 +23,7 @@ spring:
     sentinel:
       transport:
         # 配置 Sentinel Dashboard 的地址
-        dashboard: localhost:8080
+        dashboard: 127.0.0.1:8081
         port: 8719    # 默认8719 ，如果端口被占用，端口号会自动 +1
     gateway:
       globalcors:
@@ -43,9 +43,9 @@ spring:
         locator:
           enabled: true # 开启从注册中心动态创建路由的功能，利用微服务名进行路由
       routes:
-        - id: unit-console-control-zpf  # 路由ID,没有固定的规则但要求唯一，建议配合服务名
+        - id: platform-console-control-zpf  # 路由ID,没有固定的规则但要求唯一，建议配合服务名
           #uri: http://localhost:8001  # 匹配后提供服务的路由地址
-          uri: lb://unit-console-control-zpf
+          uri: lb://platform-console-control-zpf
           filters:
             #- StripPrefix=1  # 用户请求路径是/api/brand,而真实路径是/brand，需要去掉/api才是真实路径，此时可以使用StripPrefix功能来实现路径的过滤操作
             - name: RequestRateLimiter
@@ -72,8 +72,8 @@ hystrix:
 # actuator 监控配置
 management:
   # actuator端口 如果不配置做默认使用上面8080端口
-  #server:
-    #port: 8080
+  server:
+    port: 8080
   endpoints:
     web:
       exposure:
